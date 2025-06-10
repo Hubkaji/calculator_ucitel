@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let vyraz = "";
   
     function pridejDoVyrazu(hodnota) {
+
       if (hodnota === "^") hodnota = "**";
       vyraz += hodnota;
       displejVstup.textContent = vyraz;
@@ -15,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
     function smazatZnak() {
       vyraz = vyraz.slice(0, -1);
+
+      
       displejVstup.textContent = vyraz || "0";
     }
 
@@ -42,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       zaznam.textContent = `${vstup} = ${vystup}`;
       historie.prepend(zaznam);
     }
-    
+
   
 
     tlacitka.forEach(tlacitko => {
