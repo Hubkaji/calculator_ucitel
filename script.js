@@ -20,3 +20,47 @@ document.addEventListener("DOMContentLoaded", () => {
   
     function smazatVse() {
       vyraz = "";
+      displejVstup.textContent = "0";
+      displejVystup.textContent = "0";
+    }
+  
+    function spocitejVyraz() {
+      try {
+        const vysledek = Function('"use strict";return (' + vyraz + ')')();
+        displejVystup.textContent = vysledek;
+        pridejDoHistorie(vyraz, vysledek);
+        vyraz = vysledek.toString();
+      } catch {
+        displejVystup.textContent = "Chyba";
+      }
+    }
+  
+    function pridejDoHistorie(vstup, vystup) {
+      const zaznam = document.createElement("div");
+      zaznam.textContent = `${vstup} = ${vystup}`;
+      historie.prepend(zaznam);
+    }
+  
+
+    tlacitka.forEach(tlacitko => {
+      const hodnota = tlacitko.value;
+      if (!hodnota) return;
+  
+      tlacitko.addEventListener("click", () => {
+        if (hodnota === "=") {
+          spocitejVyraz();
+        } else if (hodnota === "C") {
+          smazatZnak();
+        } else if (hodnota === "CE") {
+          smazatVse();
+        } else {
+          pridejDoVyrazu(hodnota);
+        }
+      });
+    });
+
+    vymazatHistorii.addEventListener("click", () => {
+      historie.innerHTML = "";
+    });
+  });
+  
