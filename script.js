@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       vyraz = vyraz.slice(0, -1);
       displejVstup.textContent = vyraz || "0";
     }
+    
   
     function smazatVse() {
       vyraz = "";
