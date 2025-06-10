@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function smazatZnak() {
       vyraz = vyraz.slice(0, -1);
 
-      
+
       displejVstup.textContent = vyraz || "0";
     }
 
@@ -54,7 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
       tlacitko.addEventListener("click", () => {
         if (hodnota === "=") {
+
           spocitejVyraz();
+          
         } else if (hodnota === "C") {
           smazatZnak();
         } else if (hodnota === "CE") {
