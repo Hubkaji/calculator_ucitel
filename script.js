@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       vyraz = vyraz.slice(0, -1);
       displejVstup.textContent = vyraz || "0";
     }
-    
+
   
     function smazatVse() {
       vyraz = "";
@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         displejVystup.textContent = "Chyba";
       }
     }
+    
   
     function pridejDoHistorie(vstup, vystup) {
       const zaznam = document.createElement("div");
