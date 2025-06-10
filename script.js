@@ -35,13 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
         displejVystup.textContent = "Chyba";
       }
     }
-    
+
   
     function pridejDoHistorie(vstup, vystup) {
       const zaznam = document.createElement("div");
       zaznam.textContent = `${vstup} = ${vystup}`;
       historie.prepend(zaznam);
     }
+    
   
 
     tlacitka.forEach(tlacitko => {
